@@ -1,0 +1,191 @@
+Based on PokeRed assembly
+Code lifted Wholesale from Shin Pokemon Red github by Jojobar13
+
+*TYPE CHANGES*
+Psychic weak to Ghost, Dark
+Fire resists Ice
+Ice super effective against Water
+Dark (Physical, not Special)
+Steel (Does not resist Psychic or Ghost, resists Dark)
+Fairy
+Psychic_Physical (Mewtwo/Psystrike only, no Defensive stats)
+
+
+
+*MOVE ADDITIONS*
+Head Smash
+Rock Blast
+Cross Chop
+Sacred Sword
+Shadow Ball
+Shadow Bone
+Shadow Claw
+Dragon Breath
+Outrage
+Lunge
+Bug Bite (no effect)
+Leaf Blade
+Volt Tackle
+Sludge Bomb
+Psystrike (Physical Attack)
+
+Magnet Bomb
+Metal Claw (lowers foes defense)
+Flash Cannon
+Crunch
+Faint Attack
+Sweet Kiss
+Draining Kiss (DRAIN KISS)
+Play Rough
+Moonblast
+
+
+
+*MOVE TYPE CHANGES*
+Karate Chop - Fighting
+Sand Attack - Ground
+Gust - Flying
+Bite - Dark
+Strength - Fighting
+Cut - Steel, high crit
+Wing Attack - 60 Power
+Petal Dance - 90 Power
+Rock Throw - 100 Acc
+
+
+
+*POKEMON TYPE CHANGES*
+Charizard - Fire/Dragon
+Gyarados - Water/Dragon
+Seadra - Water/Dragon
+Aerodactyl - Dragon/Flying
+Kangaskhan - Ground/Dragon
+
+Marowak - Ground/Ghost
+Ninetales - Fire/Ghost
+Parasect - Bug/Ghost
+Vileplume - Grass/Ghost
+Magmar - Fire/Ghost
+
+Raticate Line - Normal/Dark
+Golbat Line - Dark/Flying
+Victreebel Line - Grass/Dark
+Hypno - Psychic/Dark
+Arbok - Poison/Dark
+Fearow Line - Dark/Flying
+Primeape - Fighting/Dark
+
+Blastoise - Water/Steel
+Magneton Line - Electric/Steel
+Sandslash - Ground/Steel
+Kabutops - Rock/Steel
+Pinsir - Bug/Steel
+Kingler - Water/Steel
+
+Butterfree - Bug/Fairy
+Clefable Line - Fairy
+Wigglytuff Line - Normal/Fairy
+Rapidash - Fire/Fairy
+Mr.Mime - Psychic/Fairy
+Seaking Line - Water/Fairy
+Lickitung - Poison/Fiary
+Mew - Psychic/Fairy
+
+Venomoth - Bug/Psychic
+Slowbro - Ice/Psychic
+
+Tauros - Normal/Fighting
+Electabuzz - Electric/Fighting
+
+Farfetch'd - Fighting/Flying
+
+Nidoking - Poison/Rock
+
+Porygon - Normal/Electric
+
+
+
+*Pokemon Stat Changes*
+Butterfree +5 Attack, +10 Speed, +10 Special
+Beedrill +15 Attack, +10 Speed
+Pidgeot +20 Special, +12 Speed
+Raticate +15 Special
+Fearow +20 HP, +5 Attack, +20 Defense
+Arbok +15 HP, +20 Defense, +5 Special
+Pikachu +10 HP, +30 speed, +25 Special
+Raichu  +15 Attack, +20 Speed, +15 Special
+Sandslash +10 Defense +30 Speed
+Golbat +40 Speed
+Parasect +60 HP
+Venomoth +5 Speed, +15 Special
+Golduck -10 HP, -10 Attack, +10 Speed, +20 Special
+Primeape +20 Speed
+Poliwrath +20 Speed, +15 Special
+Kadabra +5 Special
+Alakazam +10 Special
+Machamp +20 Attack
+Golem +10 Defense, +10 Speed
+Farfetch'd +25 Attack, +35 Speed, +30 Special
+Dodrio +10 Speed
+Dewgong +20 HP, +5 Defense, +5 Speed
+Gengar +5 Attack, +10 Speed
+Onix +40 HP, +50 Attack
+Marowak +15 HP, +40 Attack
+Kingler +10 Special
+Hitmonlee +20 Speed, +15 Defense, +5 Attack
+Hitmonchan +40 Special
+Lickitung +25 HP, +20 Attack, +15 Special
+Tangela +30 HP
+Kangaskhan +10 HP, +20 Defense, +20 Special
+Seadra +20 HP, +10 Speed
+Mr.Mime +10 HP, +40 Defense
+Jynx +30 Attack, +5 Defense, +10 Speed, +10 Special
+Electabuzz +30 Attack
+Magmar +20 Special, + 10 Attack
+Ditto +40 HP, +24 Defense, +24 Speed, +24 Special
+Porygon +20 HP, +20 Attack, +50 Speed, +50 Special
+Aricuno +10 HP
+Zapdos +5 Attack
+
+
+
+*TM CHANGES*
+TM 02 Metal Claw (PREV RAZOR WIND)
+TM 12 Faint Attack (PREV WATER GUN)
+TM 37 DRAIN_KISS (Draining Kiss)(Egg Bomb added to Exeggutor, Chansey, Mew Lv UP)
+TM 41 Sludge Bomb (Softboiled added to Chansey and Mew Lv UP)
+TM 43 Conversion (Sky Attack added to most Flying Type Lv UP and Mew Lv UP)
+TM 46 Shadow Ball (Psywave added to various Lv UP)
+
+
+
+MISC CHANGES
+All Pokemon made available in each version (rarity varies)
+Changed trade, gift, and prize Pokemon
+Some item locations changed
+
+Changed Jynx's face to be less Mr.Popo
+
+Add Conversion to Mew Lv Up
+Add Psywave to Lv UP of Butterfree, Clefairy, Jigglypuff, Venonat, Venomoth, Poliwag, Poliwhirl, Abra, Kadabra, Alakazam, Slowpoke, Slowbro, Drowzee, Hypno, Exeggcute, Staryu, Mr. Mime, Jynx, Lapras, Porygon, Mewtwo, Mew
+Other Lv Up moveset changes to match type and provide more options
+
+Modified Gym and E4 teams and movesets
+
+IN THEORY made Focus Energy properly multiply crit-ratio
+
+
+
+HOPE TO DO
+Disable border tile encounters (MissingNo no longer works properly)
+Add Post-Game gym leader rebattles
+Adjust XP gain
+Add Post-Game E4 & Champion Upgrades (Xtra hard based on balance critiques)
+Add more moves
+Remake hack entirely using Shin-Pokered (Vanilla) as a base (wanna keep some bugs tho)
+Adjust any overly broken Pokemon post-test (Other than Mewtwo)
+Choose a sixth Non-Legendary Ice-type (Make Cloyster Steel if I can find a seventh)
+Justify making Kangaskhan a Dragon
+Figure out WTF Lickitung is supposed to be
+Make X and Y harder (but still not very hard)
+My own Pokemon game???

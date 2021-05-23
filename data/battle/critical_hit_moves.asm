@@ -1,0 +1,11 @@
+HighCriticalMoves:
+	db KARATE_CHOP
+	db CUT
+	db RAZOR_LEAF
+	db CRABHAMMER
+	db SLASH
+	db CROSS_CHOP
+	db VOLT_TACKLE
+	db LEAF_BLADE
+	db SACRED_SWORD
+	db -1 ; end

@@ -48,7 +48,7 @@ _RockTunnel2AfterBattleText4::
 
 _RockTunnel2BattleText5::
 	text "Do you know about"
-	line "costume players?"
+	line "cosplay?"
 	done
 
 _RockTunnel2EndBattleText5::
@@ -57,7 +57,7 @@ _RockTunnel2EndBattleText5::
 	prompt
 
 _RockTunnel2AfterBattleText5::
-	text "Costume players"
+	text "Cosplayers"
 	line "dress up as"
 	cont "#MON for fun."
 	done

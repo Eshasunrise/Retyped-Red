@@ -13,14 +13,16 @@ _VermilionHouse2Text_560b6::
 	text "Grand! I like"
 	line "your style!"
 
-	para "Take this and"
-	line "fish, young one!"
+	para "Take this fish,"
+	line "young one!"
+	done
 
-	para "<PLAYER> received"
-	line "an @"
-	text_ram wcf4b
-	text "!@"
-	text_end
+;	para "<PLAYER> received"
+;	line "GOLDEEN!@"
+;	line "a @"
+;	text_ram wcf4b
+;	text "!@"
+;	text_end
 
 _VermilionHouse2Text_560bb::
 	text_start

@@ -76,7 +76,7 @@ SuperRodData:
 
 .Group7:
 	db 4
-	db 5, TENTACOOL
+	db 15, TENTACOOL
 	db 15, KRABBY
 	db 15, GOLDEEN
 	db 15, MAGIKARP
@@ -86,7 +86,7 @@ SuperRodData:
 	db 15, STARYU
 	db 15, HORSEA
 	db 15, SHELLDER
-	db 15, GOLDEEN
+	db 15, TENTACOOL
 
 .Group9:
 	db 4

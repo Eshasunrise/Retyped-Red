@@ -2,7 +2,8 @@ NamePointers::
 ; entries correspond to *_NAME constants
 	dw MonsterNames
 	dw MoveNames
-	dw UnusedBadgeNames
+;	dw UnusedBadgeNames
+	dw tmhmNames
 	dw ItemNames
 	dw wPartyMonOT ; player's OT names list
 	dw wEnemyMonOT ; enemy's OT names list
@@ -20,9 +21,26 @@ GetName::
 
 	; TM names are separate from item names.
 	; BUG: This applies to all names instead of just items.
+;	cp THUNDERKICK ; is this a move?
+;	jp nc, .notMachine
+;;;;;;;;;;;;;
+	;;joenote - fixing the aforementioned bug
+	push bc
+	ld b, a
+	ld a, [wNameListType]
+	cp ITEM_NAME
+	ld a, b
+	pop bc
+	jr nz, .notMachine	;
+;;;;;;;;;;;;;
 	cp HM01
-	jp nc, GetMachineName
-
+	jr c, .notMachine
+;	sub $C3	;need to shift things because tm and hm constants are offset by +$C3 from the first item constant
+	sub (HM01 - 1)
+	ld [wd0b5], a
+	ld a, TMHM_NAME	
+	ld [wNameListType], a
+.notMachine
 	ldh a, [hLoadedROMBank]
 	push af
 	push hl
@@ -85,6 +103,19 @@ GetName::
 	ld [wUnusedCF8D], a
 	ld a, d
 	ld [wUnusedCF8D + 1], a
+;	pop de
+;	pop bc
+;	pop hl
+;	pop af
+;	ldh [hLoadedROMBank], a
+;	ld [MBC1RomBank], a
+;	ret
+	ld a, [wd11e]
+	cp HM01
+	jr c, .notMachine2
+	ld a, ITEM_NAME	;this needs to be reset because machines can be in the same listings as items	
+	ld [wNameListType], a
+.notMachine2
 	pop de
 	pop bc
 	pop hl

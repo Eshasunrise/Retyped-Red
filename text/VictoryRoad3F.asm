@@ -46,18 +46,19 @@ _VictoryRoad3AfterBattleText4::
 	done
 
 _VictoryRoad3BattleText5::
-	text "Trainers live to"
-	line "seek stronger"
-	cont "opponents!"
+	text "I was waiting"
+	line "for you to get"
+	cont "here, <PLAYER>!"
 	done
 
 _VictoryRoad3EndBattleText5::
-	text "Oh!"
-	line "So strong!"
+	text "I knew it!"
+	line "You're still"
+	cont "strong!"
 	prompt
 
 _VictoryRoad3AfterBattleText5::
-	text "By fighting tough"
-	line "battles, you get"
-	cont "stronger!"
+	text "Thank you for"
+	line "battling me so"
+	cont "often!"
 	done

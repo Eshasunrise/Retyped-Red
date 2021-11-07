@@ -9,8 +9,8 @@ IF DEF(_RED)
 	db 15, EKANS
 	db 17, VOLTORB
 	db 17, SPEAROW
-	db 13, EKANS
-	db 17, SANDSHREW
+	db 13, SANDSHREW
+	db 17, MR_MIME
 ENDC
 IF DEF(_BLUE)
 	db 11, SANDSHREW
@@ -18,8 +18,8 @@ IF DEF(_BLUE)
 	db 15, SANDSHREW
 	db 17, VOLTORB
 	db 17, SPEAROW
-	db 13, SANDSHREW
-	db 17, EKANS
+	db 13, EKANS
+	db 17, MR_MIME
 ENDC
 
 	db 0 ; water encounter rate

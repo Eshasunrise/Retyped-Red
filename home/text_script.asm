@@ -171,10 +171,10 @@ LoadItemList::
 
 DisplayPokemonCenterDialogue::
 ; zeroing these doesn't appear to serve any purpose
-	xor a
-	ldh [hItemPrice], a
-	ldh [hItemPrice + 1], a
-	ldh [hItemPrice + 2], a
+;	xor a
+;	ldh [hItemPrice], a
+;	ldh [hItemPrice + 1], a
+;	ldh [hItemPrice + 2], a
 
 	inc hl
 	homecall DisplayPokemonCenterDialogue_

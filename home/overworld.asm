@@ -1976,24 +1976,26 @@ RunMapScript::
 .return
 	ret
 
+;joenote - modified to properly load female trainer sprites
 LoadWalkingPlayerSpriteGraphics::
-	ld de, RedSprite
-	ld hl, vNPCSprites
+	farcall LoadRedSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
-	ld de, SeelSprite
-	ld hl, vNPCSprites
+	farcall LoadSeelSpriteToDE
+;	ld hl, vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
-	ld de, RedBikeSprite
-	ld hl, vNPCSprites
+	farcall LoadRedCyclingSpriteToDE
+;	ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
+	ld hl, vNPCSprites
 	push de
 	push hl
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	call CopyVideoData
 	pop hl
 	pop de
@@ -2004,8 +2006,21 @@ LoadPlayerSpriteGraphicsCommon::
 	inc d
 .noCarry
 	set 3, h
-	lb bc, BANK(RedSprite), $0c
+	call .isfemaletrainer
 	jp CopyVideoData
+;;;;;;;;;;;;
+.isfemaletrainer
+	lb bc, BANK(RedFSprite), $0c
+	ld a, [wPlayerGenderByte]
+	;load regular sprite bank if fem bit cleared or overridding fem bit set
+	;otherwise load fem sprite bank
+	and %00000101
+	xor %00000001
+	jr z, .donefemale
+	lb bc, BANK(RedSprite), $0c
+.donefemale
+	ret
+;;;;;;;;;;;;
 
 ; function to load data from the map header
 LoadMapHeader::

@@ -1,6 +1,6 @@
 	db DEX_NIDOKING ; pokedex id
 
-	db  81, 102,  87,  85,  75
+	db  81, 102,  87,  85,  85
 	;   hp  atk  def  spd  spc
 
 	db POISON, ROCK ; type

@@ -194,10 +194,30 @@
 	const LEAF_BLADE   ; bb
 	const SACRED_SWORD ; bc
 	const PLAY_ROUGH   ; bd
+	const WINGBEAT     ; be
+	const BOOMBURST    ; bf
+	const BELCH        ; c0
+	const STONE_EDGE   ; c1
+	const DRILL_RUN    ; c2
+	const WEIRD_STEAM  ; c3
+	const FREEZE_GLARE ; c4
+	const THUNDERKICK  ; c5
+	const FIERY_WRATH  ; c6
+	const FRENZY_PLANT ; c7
+	const BLAST_BURN   ; c8
+	const HYDRO_CANNON ; c9
+	const ACID_SPRAY   ; ca
+	const WHIRLPOOL    ; cb
+	const FEATHERDANCE ; cc
+	const SNARL        ; cd
+	const METAL_SOUND  ; ce
+	const ROCK_POLISH  ; cf
+	const CHARGE       ; d0
+	const SHORE_UP	   ; d1
 
 NUM_ATTACKS EQU const_value - 1
 
-	const STRUGGLE     ; be
+	const STRUGGLE     ; d2
 
 	; Moves do double duty as animation identifiers.
 
@@ -238,3 +258,7 @@ NUM_ATTACKS EQU const_value - 1
 	const HIDEPIC_ANIM ; monster disappears
 	const ROCK_ANIM ; throw rock
 	const BAIT_ANIM ; throw bait
+
+
+	
+	

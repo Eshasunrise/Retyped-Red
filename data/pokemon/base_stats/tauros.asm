@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, FIGHTING ; type
-	db 45 ; catch rate
+	db 120 ; catch rate
 	db 211 ; base exp
 
 	INCBIN "gfx/pokemon/front/tauros.pic", 0, 1 ; sprite dimensions

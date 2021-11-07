@@ -120,7 +120,7 @@ _Route9AfterBattleText7::
 
 _Route9BattleText8::
 	text "Hahahaha!"
-	line "Come on, dude!"
+	line "Come on, kid!"
 	done
 
 _Route9EndBattleText8::

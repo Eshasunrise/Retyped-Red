@@ -416,12 +416,12 @@ LoreleiAI:
 	ld a, 5
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseHyperPotion
 
 BrunoAI:
 	cp 25 percent + 1
 	ret nc
-	jp AIUseXDefend
+	jp AIUseXAttack
 
 AgathaAI:
 	cp 8 percent
@@ -431,7 +431,7 @@ AgathaAI:
 	ld a, 4
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseHyperPotion
 
 LanceAI:
 	cp 50 percent + 1
@@ -632,12 +632,12 @@ AICureStatus:
 	res 0, [hl]
 	ret
 
-AIUseXAccuracy: ; unused
-	call AIPlayRestoringSFX
-	ld hl, wEnemyBattleStatus2
-	set 0, [hl]
-	ld a, X_ACCURACY
-	jp AIPrintItemUse
+;AIUseXAccuracy: ; unused
+;	call AIPlayRestoringSFX
+;	ld hl, wEnemyBattleStatus2
+;	set 0, [hl]
+;	ld a, X_ACCURACY
+;	jp AIPrintItemUse
 
 AIUseGuardSpec:
 	call AIPlayRestoringSFX
@@ -646,12 +646,12 @@ AIUseGuardSpec:
 	ld a, GUARD_SPEC
 	jp AIPrintItemUse
 
-AIUseDireHit: ; unused
-	call AIPlayRestoringSFX
-	ld hl, wEnemyBattleStatus2
-	set 2, [hl]
-	ld a, DIRE_HIT
-	jp AIPrintItemUse
+;AIUseDireHit: ; unused
+;	call AIPlayRestoringSFX
+;	ld hl, wEnemyBattleStatus2
+;	set 2, [hl]
+;	ld a, DIRE_HIT
+;	jp AIPrintItemUse
 
 AICheckIfHPBelowFraction:
 ; return carry if enemy trainer's current HP is below 1 / a of the maximum

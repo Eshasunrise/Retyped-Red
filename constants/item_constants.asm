@@ -109,6 +109,7 @@ SAFARI_ROCK           EQU $16 ; overload
 
 	const_next $C4
 
+
 ; HMs are defined before TMs, so the actual number of TM definitions
 ; is not yet available. The TM quantity is hard-coded here and must
 ; match the actual number below.
@@ -216,10 +217,12 @@ ENDM
 	add_tm EXPLOSION    ; $F7
 	add_tm ROCK_SLIDE   ; $F8
 	add_tm TRI_ATTACK   ; $F9
-	add_tm SUBSTITUTE   ; $FA
+	add_tm SUBSTITUTE   ; $FA	
 assert NUM_TMS == const_value - TM01, "NUM_TMS ({d:NUM_TMS}) does not match the number of add_tm definitions"
 
 ; 50 TMs + 5 HMs = 55 learnable TM/HM flags per Pokémon.
 ; These fit in 7 bytes, with one unused bit left over.
 __tmhm_value__ = NUM_TMS + NUM_HMS + 1
 UNUSED_TMNUM EQU __tmhm_value__
+
+

@@ -1,6 +1,6 @@
 	db DEX_LICKITUNG ; pokedex id
 
-	db 115,  75,  75,  30,  75
+	db 115,  90, 105,  50,  90
 	;   hp  atk  def  spd  spc
 
 	db FAIRY, POISON ; type

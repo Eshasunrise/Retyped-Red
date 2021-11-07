@@ -4608,14 +4608,12 @@ CriticalHitTest:
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	bit GETTING_PUMPED, a         ; test for focus energy
-	jr z, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
+	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
 	                             ; resulting in 1/4 the usual crit chance
 	sla b                        ; (effective (base speed/2)*2)
-	jr z, .noFocusEnergyUsed
-	sla b
-	jr c, .guaranteedCritical
-	sla b
-	jr c, .guaranteedCritical
+	jr nc, .noFocusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+	jr .noFocusEnergyUsed
 .focusEnergyUsed
 	srl b
 .noFocusEnergyUsed
@@ -4643,7 +4641,6 @@ CriticalHitTest:
 	rlc a
 	cp b                         ; check a against calculated crit rate
 	ret nc                       ; no critical hit if no borrow
-.guaranteedCritical
 	ld a, $1
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
@@ -4687,6 +4684,20 @@ HandleCounterMove:
 	and a ; normal type
 	jr z, .counterableType
 	cp FIGHTING
+	jr z, .counterableType
+	cp BUG
+	jr z, .counterableType
+	cp ROCK
+	jr z, .counterableType
+	cp FLYING
+	jr z, .counterableType
+	cp GROUND
+	jr z, .counterableType
+	cp DARK
+	jr z, .counterableType
+	cp STEEL
+	jr z, .counterableType
+	cp BIRD
 	jr z, .counterableType
 ; if the move wasn't Normal or Fighting type, miss
 	xor a
@@ -6304,14 +6315,25 @@ SwapPlayerAndEnemyLevels:
 ; loads either red back pic or old man back pic
 ; also writes OAM data and loads tile patterns for the Red or Old Man back sprite's head
 ; (for use when scrolling the player sprite and enemy's silhouettes on screen)
+;joenote - modifying to allow a female trainer back sprite
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
 	ld de, RedPicBack
-	jr nz, .next
+	jr nz, .redback
 	ld de, OldManPicBack
-.next
+	jr .bankred
+.redback
+	ld a, [wPlayerGenderByte]
+	bit 0, a	;check if girl
+	jr z, .bankred	;go to normal red sprite if boy
+	;else load girl sprites
+	ld de, RedPicFBack
+	ld a, BANK(RedPicFBack)
+	jr .next
+.bankred
 	ld a, BANK(RedPicBack)
+.next
 	call UncompressSpriteFromDE
 	predef ScaleSpriteByTwo
 	ld hl, wOAMBuffer
@@ -6366,8 +6388,9 @@ LoadPlayerBackPic:
 
 ; does nothing since no stats are ever selected (barring glitches)
 DoubleOrHalveSelectedStats:
-	callfar DoubleSelectedStats
-	jpfar HalveSelectedStats
+;	callfar DoubleSelectedStats
+;	jpfar HalveSelectedStats
+	ret
 
 ScrollTrainerPicAfterBattle:
 	jpfar _ScrollTrainerPicAfterBattle

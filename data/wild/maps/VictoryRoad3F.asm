@@ -1,8 +1,8 @@
 PlateauMons3:
 	db 15 ; grass encounter rate
-	db 24, MACHOP
-	db 26, GEODUDE
-	db 22, ZUBAT
+	db 34, MACHOP
+	db 36, GEODUDE
+	db 32, ZUBAT
 	db 42, ONIX
 	db 40, VENOMOTH
 	db 45, ONIX

@@ -1,6 +1,6 @@
 	db DEX_KABUTOPS ; pokedex id
 
-	db  60, 115, 105,  80,  70
+	db  60, 120, 115,  90,  70
 	;   hp  atk  def  spd  spc
 
 	db ROCK, STEEL ; type
@@ -18,7 +18,7 @@
 	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   FAINT_ATTACK, ICE_BEAM,     \
 	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SURF
+	     ROCK_SLIDE,   SUBSTITUTE,   SURF
 	; end
 
 	db 0 ; padding

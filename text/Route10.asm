@@ -94,7 +94,7 @@ _Route10EndBattleText6::
 _Route10AfterBattleText6::
 	text "The #MON here"
 	line "are so chunky!"
-	cont "There should be a"
+	cont "I should get a"
 	cont "pink one with a"
 	cont "floral pattern!"
 	done

@@ -8,16 +8,23 @@ HealEffect_:
 	ld de, wEnemyMonHP
 	ld hl, wEnemyMonMaxHP
 	ld a, [wEnemyMoveNum]
-.healEffect
+.healEffect	;joenote - fixed the fail on 255 or 511 hp issue
+	;h holds high byte of maxHP, l holds low byte of maxHP
+	;d holds high byte of curHP, e holds low byte of curHP
 	ld b, a
-	ld a, [de]
-	cp [hl] ; most significant bytes comparison is ignored
+	ld a, [de]	;load d into a
+	cp [hl] 	;compare a with h
+			; most significant bytes comparison is ignored
 	        ; causes the move to miss if max HP is 255 or 511 points higher than the current HP
-	inc de
-	inc hl
-	ld a, [de]
-	sbc [hl]
+	;assume h >= d. it does not matter what d or h are, c_flag = 1 if h != d so assume h > d
+	inc de	;incrementing 16-bit registers does not change the flag register
+	inc hl	; however, it does get us working with e & l
+	jr nz, .passed	; if c_flag is set, then h is > d and therefore hl is assumed > de. we can stop checking here
+	ld a, [de]	;if h = d, then load e into a. again, assume l >= e
+	sbc [hl]	;c_flag is still 0. compare a with l. 
+	;A a zero flag means both h and d as well as l and e are equal pairs. hl = de, so already at full hp!
 	jp z, .failed ; no effect if user's HP is already at its maximum
+.passed
 	ld a, b
 	cp REST
 	jr nz, .healHP
@@ -27,7 +34,7 @@ HealEffect_:
 	ld c, 50
 	call DelayFrames
 	ld hl, wBattleMonStatus
-	ldh a, [hWhoseTurn]
+	ld a, [hWhoseTurn]
 	and a
 	jr z, .restEffect
 	ld hl, wEnemyMonStatus

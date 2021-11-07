@@ -40,6 +40,7 @@ INCLUDE "engine/battle/move_effects/drain_hp.asm"
 INCLUDE "engine/menus/players_pc.asm"
 INCLUDE "engine/pokemon/remove_mon.asm"
 INCLUDE "engine/events/display_pokedex.asm"
+INCLUDE "data/items/tmhm_names.asm"
 
 
 SECTION "bank3", ROMX
@@ -99,12 +100,12 @@ INCLUDE "engine/battle/move_effects/conversion.asm"
 INCLUDE "engine/battle/move_effects/haze.asm"
 INCLUDE "engine/battle/get_trainer_name.asm"
 INCLUDE "engine/math/random.asm"
+INCLUDE "custom_functions/func_overworld.asm"
 
 
 SECTION "Battle Engine 2", ROMX
 
 INCLUDE "engine/gfx/load_pokedex_tiles.asm"
-INCLUDE "engine/overworld/map_sprites.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"
 INCLUDE "engine/events/evolve_trade.asm"
 INCLUDE "engine/battle/move_effects/substitute.asm"
@@ -193,14 +194,14 @@ SECTION "Battle Engine 7", ROMX
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/cries.asm"
-INCLUDE "engine/battle/unused_stats_functions.asm"
+;INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
 INCLUDE "engine/battle/move_effects/heal.asm"
 INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
+
 
 
 SECTION "Battle Core", ROMX
@@ -358,4 +359,10 @@ INCLUDE "engine/overworld/dust_smoke.asm"
 INCLUDE "data/moves/animations.asm"
 INCLUDE "data/battle_anims/subanimations.asm"
 INCLUDE "data/battle_anims/frame_blocks.asm"
+
+
+SECTION "bank2E", ROMX
+INCLUDE "engine/overworld/map_sprites.asm"
+INCLUDE "gfx/trade.asm"
 INCLUDE "engine/movie/evolution.asm"
+

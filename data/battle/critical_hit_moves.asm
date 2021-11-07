@@ -1,11 +1,15 @@
 HighCriticalMoves:
 	db KARATE_CHOP
+	db RAZOR_WIND
 	db CUT
 	db RAZOR_LEAF
+	db SKY_ATTACK
 	db CRABHAMMER
 	db SLASH
 	db CROSS_CHOP
 	db VOLT_TACKLE
 	db LEAF_BLADE
 	db SACRED_SWORD
+	db STONE_EDGE
+	db DRILL_RUN
 	db -1 ; end

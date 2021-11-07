@@ -76,7 +76,7 @@ _SSAnne8AfterBattleText4::
 	done
 
 _SSAnne8Text5::
-	text "Waiter, I would"
+	text "Pardon, I would"
 	line "like a cherry pie"
 	cont "please!"
 	done

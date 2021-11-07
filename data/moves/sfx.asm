@@ -188,5 +188,27 @@ MoveSoundTable:
 	db SFX_BATTLE_12,          $20, $e0 ; LEAF_BLADE
 	db SFX_BATTLE_0E,          $00, $a0 ; SACRED_SWORD
 	db SFX_BATTLE_23,          $12, $c0 ; PLAY_ROUGH
+	db SFX_BATTLE_12,          $00, $c0 ; WINGBEAT
+	db SFX_BATTLE_34,          $10, $ff ; BOOMBURST
+	db SFX_BATTLE_09,          $8f, $10 ; BELCH
+	db SFX_BATTLE_25,          $00, $10 ; STONE_EDGE
+	db SFX_BATTLE_13,          $f0, $30 ; DRILL_RUN
+	db SFX_BATTLE_1C,          $00, $ff ; WEIRD_STEAM
+	db SFX_NOT_VERY_EFFECTIVE, $09, $ff ; FREEZE_GLARE
+	db SFX_BATTLE_26,          $00, $65 ; THUNDERKICK
+	db SFX_BATTLE_19,          $21, $e0 ; FIERY_WRATH
+	db SFX_BATTLE_2E,          $00, $80 ; FRENZY_PLANT
+	db SFX_BATTLE_29,          $1f, $20 ; BLAST_BURN
+	db SFX_BATTLE_2C,          $00, $80 ; HYDRO_CANNON
+	db SFX_BATTLE_2A,          $80, $c0 ; ACID_SPRAY
+	db SFX_BATTLE_2C,          $00, $80 ; WHIRLPOOL
+	db SFX_BATTLE_12,          $00, $c0 ; FEATHERDANCE
+	db SFX_BATTLE_0B,          $00, $40 ; SNARL
+	db SFX_BATTLE_31,          $ff, $40 ; METAL_SOUND
+	db SFX_BATTLE_14,          $33, $30 ; ROCK_POLISH
+	db SFX_FAINT_FALL,         $20, $c0 ; CHARGE
+	db SFX_BATTLE_0E,          $f0, $80 ; SHORE_UP
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
-	db SFX_BATTLE_0B,          $00, $80
+	
+	
+

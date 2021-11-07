@@ -1,6 +1,6 @@
 	db DEX_LAPRAS ; pokedex id
 
-	db 130,  85,  80,  60,  95
+	db 130,  85,  90,  60, 105
 	;   hp  atk  def  spd  spc
 
 	db WATER, ICE ; type
@@ -17,8 +17,8 @@
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   SOLARBEAM,    \
 	     DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      PSYCHIC_M,    MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         DRAIN_KISS,   SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   SURF,         STRENGTH
+	     DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   REST,         \
+	     SUBSTITUTE,   SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

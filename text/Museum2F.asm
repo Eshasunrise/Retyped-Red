@@ -35,7 +35,7 @@ _Museum2FText5::
 
 _Museum2FText6::
 	text "SPACE SHUTTLE"
-	line "COLUMBIA"
+	line "MOSSDEEP"
 	done
 
 _Museum2FText7::

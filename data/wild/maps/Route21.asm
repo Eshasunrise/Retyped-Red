@@ -9,7 +9,7 @@ Route21Mons:
 	db 32, PIDGEOTTO
 	db 28, LICKITUNG
 	db 30, TANGELA
-	db 32, TANGELA
+	db 32, MR_MIME
 
 	db 5 ; water encounter rate
 	db  5, TENTACOOL

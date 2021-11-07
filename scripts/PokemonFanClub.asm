@@ -1,15 +1,15 @@
 PokemonFanClub_Script:
 	jp EnableAutoTextBoxDrawing
 
-FanClubBikeInBag:
+;FanClubBikeInBag:
 ; check if any bike paraphernalia in bag
-	CheckEvent EVENT_GOT_BIKE_VOUCHER
-	ret nz
-	ld b, BICYCLE
-	call IsItemInBag
-	ret nz
-	ld b, BIKE_VOUCHER
-	jp IsItemInBag
+;	CheckEvent EVENT_GOT_BIKE_VOUCHER
+;	ret nz
+;	ld b, BICYCLE
+;	call IsItemInBag
+;	ret nz
+;	ld b, BIKE_VOUCHER
+;	jp IsItemInBag
 
 PokemonFanClub_TextPointers:
 	dw FanClubText1
@@ -100,7 +100,8 @@ FanClubText4:
 FanClubText5:
 ; chair
 	text_asm
-	call FanClubBikeInBag
+;	call FanClubBikeInBag
+	CheckEvent EVENT_GOT_BIKE_VOUCHER
 	jr nz, .nothingleft
 
 	ld hl, .meetchairtext
@@ -113,7 +114,7 @@ FanClubText5:
 	; tell the story
 	ld hl, .storytext
 	call PrintText
-	lb bc, BIKE_VOUCHER, 1
+	lb bc, MASTER_BALL, 1
 	call GiveItem
 	jr nc, .bag_full
 	ld hl, .receivedvouchertext

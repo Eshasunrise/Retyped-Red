@@ -15,9 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  FAINT_ATTACK, \
-	     HYPER_BEAM,   FLAMETHROWER, MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         DRAIN_KISS,   FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
-	     REST,         SHADOW_BALL,  SUBSTITUTE
+	     HYPER_BEAM,   FLAMETHROWER, SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
+	     REFLECT,      BIDE,         DRAIN_KISS,   FIRE_BLAST,   SWIFT,        \
+	     SKULL_BASH,   REST,         SHADOW_BALL,  SUBSTITUTE
 	; end
 
 	db 0 ; padding

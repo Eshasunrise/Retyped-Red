@@ -7,7 +7,7 @@ Route18Mons:
 	db 25, FEAROW
 	db 26, DODUO
 	db 28, DODUO
-	db 29, RATICATE
+	db 29, FARFETCHD
 	db 27, FEAROW
 	db 29, FEAROW
 

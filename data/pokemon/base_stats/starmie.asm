@@ -1,6 +1,6 @@
 	db DEX_STARMIE ; pokedex id
 
-	db  60,  75,  85, 115, 100
+	db  60,  75,  95, 115, 110
 	;   hp  atk  def  spd  spc
 
 	db WATER, PSYCHIC_TYPE ; type

@@ -10,7 +10,7 @@ IF DEF(_RED)
 	db 12, RATTATA
 	db 12, SPEAROW
 	db  8, SANDSHREW
-	db 12, EKANS
+	db 10, CHARMANDER
 ENDC
 IF DEF(_BLUE)
 	db  6, SANDSHREW
@@ -19,6 +19,6 @@ IF DEF(_BLUE)
 	db 12, RATTATA
 	db 12, SPEAROW
 	db  8, EKANS
-	db 12, SANDSHREW
+	db 10, CHARMANDER
 ENDC
 	db 0 ; water encounter rate

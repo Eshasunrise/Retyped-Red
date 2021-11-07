@@ -21,6 +21,6 @@ _TM29ExplanationText::
 	done
 
 _TM29NoRoomText::
-	text "Where do you plan"
-	line "to put this?"
+	text "But have nowhere"
+	line "to put it."
 	done

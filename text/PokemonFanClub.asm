@@ -91,18 +91,17 @@ ReceivedBikeVoucherText::
 
 ExplainBikeVoucherText::
 	text_start
-	para "Exchange that for"
-	line "a BICYCLE!"
+	para "Use that to catch"
+	line "any #MON!!"
 
 	para "Don't worry, my"
-	line "FEAROW will FLY"
-	cont "me anywhere!"
+	line "lovely #MON"
+	cont "are all I need!"
 
-	para "So, I don't need a"
-	line "BICYCLE!"
-
-	para "I hope you like"
-	line "cycling!"
+	para "So, use it as"
+	line "you see fit!"
+;	para "I hope you like"
+;	line "cycling!"
 	done
 
 FanClubNoStoryText::

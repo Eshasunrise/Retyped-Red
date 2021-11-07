@@ -1,6 +1,6 @@
 	db DEX_GOLBAT ; pokedex id
 
-	db  75,  80,  70, 130,  75
+	db  75,  80,  70, 120,  75
 	;   hp  atk  def  spd  spc
 
 	db DARK, FLYING ; type

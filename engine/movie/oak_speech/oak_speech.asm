@@ -30,9 +30,13 @@ SetDefaultNames:
 	ld de, wRivalName
 	ld bc, NAME_LENGTH
 	jp CopyData
+	
 
 OakSpeech:
+
+	call ClearScreen
 	ld a, SFX_STOP_ALL_MUSIC
+	ld a, $FF
 	call PlaySound
 	ld a, BANK(Music_Routes2)
 	ld c, a
@@ -42,12 +46,43 @@ OakSpeech:
 	call LoadTextBoxTilePatterns
 	call SetDefaultNames
 	predef InitPlayerData2
+	;;joenote - give option to play as a female trainer here
+	ld hl, AskIfGirlText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	ld [wPlayerGenderByte], a
+;;;;;;;;;;;;;
+	call ClearScreen
 	ld hl, wNumBoxItems
 	ld a, POTION
 	ld [wcf91], a
+	ld a, 5
+	ld [wItemQuantity], a
+	call AddItemToInventory  ; give five potions
+;;added potions to PC
+	ld hl, wNumBoxItems
+	ld a, BICYCLE
+	ld [wcf91], a
 	ld a, 1
 	ld [wItemQuantity], a
-	call AddItemToInventory  ; give one potion
+	call AddItemToInventory  ; give bicycle
+	SetEvent EVENT_GOT_BICYCLE
+;;Attempt to add Bike
+	ld hl, wNumBoxItems
+	ld a, OLD_ROD
+	ld [wcf91], a
+	ld a, 1
+	ld [wItemQuantity], a
+	call AddItemToInventory  ; give Old Rod
+;;added Old Rod
+;	ld hl, wNumBoxItems
+;	ld a, RARE_CANDY
+;	ld [wcf91], a
+;	ld a, 1
+;	ld [wItemQuantity], a
+;	call AddItemToInventory  ; give one rare candy
 	ld a, [wDefaultMap]
 	ld [wDestinationMap], a
 	call SpecialWarpIn
@@ -75,9 +110,17 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+;;;;;;;;;;;
+;joenote - support fem sprite
+	ld de, RedPicFFront
+	lb bc, BANK(RedPicFFront), $00
+	ld a, [wPlayerGenderByte]
+	bit 0, a	;check if girl
+	jr nz, .donefemale_front
+;;;;;;;;;;;
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
-	call IntroDisplayPicCenteredOrUpperRight
+.donefemale_front	call IntroDisplayPicCenteredOrUpperRight	;;;EileneNote, Modded here
 	call MovePicLeft
 	ld hl, IntroducePlayerText
 	call PrintText
@@ -94,9 +137,17 @@ OakSpeech:
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
+;;;;;;;;;;;;;;
+;joenote - support female sprite
+	ld de, RedPicFFront
+	lb bc, BANK(RedPicFFront), $00
+	ld a, [wPlayerGenderByte]
+	bit 0, a	;check girlitude
+	jr nz, .donefemale_front2
+;;;;;;;;;;;;;;
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $00
-	call IntroDisplayPicCenteredOrUpperRight
+.donefemale_front2	call IntroDisplayPicCenteredOrUpperRight	;;;Eilenenote - modded here too
 	call GBFadeInFromWhite
 	ld a, [wd72d]
 	and a
@@ -113,9 +164,19 @@ OakSpeech:
 	ld [MBC1RomBank], a
 	ld c, 4
 	call DelayFrames
+;;;;;;;;;;;;;;
+	;joenote - support fem trainer, Eilenenote - fem sprite asked me to thank you for all the support
+	ld de, RedFSprite
+	lb bc, BANK(RedFSprite), $0C
+	ld a, [wPlayerGenderByte]
+	bit 0, a
+	jr nz, .donefemale_sprite
 	ld de, RedSprite
-	ld hl, vSprites
+
 	lb bc, BANK(RedSprite), $0C
+.donefemale_sprite
+;;;;;;;;;;;;;;
+	ld hl, vSprites
 	call CopyVideoData
 	ld de, ShrinkPic1
 	lb bc, BANK(ShrinkPic1), $00
@@ -152,6 +213,10 @@ OakSpeech:
 	call DelayFrames
 	call GBFadeOutToWhite
 	jp ClearScreen
+
+AskIfGirlText:: ;joenote - text to ask if female trainer
+	text_far _AskIfGirlText
+	text_end
 OakSpeechText1:
 	text_far _OakSpeechText1
 	text_end

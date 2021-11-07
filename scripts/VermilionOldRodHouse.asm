@@ -6,8 +6,9 @@ VermilionOldRodHouse_TextPointers:
 
 VermilionHouse2Text1:
 	text_asm
-	ld a, [wd728]
-	bit 3, a ; got old rod?
+;	ld a, [wd728]
+;	bit 3, a ; got old rod?
+	CheckEvent EVENT_GOT_GOLDEEN
 	jr nz, .got_item
 	ld hl, VermilionHouse2Text_560b1
 	call PrintText
@@ -15,23 +16,38 @@ VermilionHouse2Text1:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refused
-	lb bc, OLD_ROD, 1
-	call GiveItem
-	jr nc, .bag_full
-	ld hl, wd728
-	set 3, [hl] ; got old rod
 	ld hl, VermilionHouse2Text_560b6
+	call PrintText
+	ld a, [wSimulatedJoypadStatesEnd]
+	and a
+	call z, WaitForTextScrollButtonPress
+	call EnableAutoTextBoxDrawing
+	lb bc, GOLDEEN, 17
+	call GivePokemon
+	jr nc, .bag_full
+	SetEvent EVENT_GOT_GOLDEEN
 	jr .done
+;	lb bc, OLD_ROD, 1
+;	call GiveItem
+;	jr nc, .bag_full
+;	ld hl, wd728
+;	set 3, [hl] ; got old rod
+
 .bag_full
 	ld hl, VermilionHouse2Text_560ca
+	call PrintText
+	text_end
 	jr .done
 .refused
 	ld hl, VermilionHouse2Text_560c0
+	call PrintText
 	jr .done
 .got_item
 	ld hl, VermilionHouse2Text_560c5
-.done
 	call PrintText
+.done
+;	ld hl, _VermilionHouse2Text_560bb
+;	call PrintText
 	jp TextScriptEnd
 
 VermilionHouse2Text_560b1:
@@ -40,9 +56,10 @@ VermilionHouse2Text_560b1:
 
 VermilionHouse2Text_560b6:
 	text_far _VermilionHouse2Text_560b6
-	sound_get_item_1
-	text_far _VermilionHouse2Text_560bb
+;	sound_get_item_1
+;	text_far _VermilionHouse2Text_560bb
 	text_end
+
 
 VermilionHouse2Text_560c0:
 	text_far _VermilionHouse2Text_560c0

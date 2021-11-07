@@ -8,7 +8,7 @@ DungeonMons2:
 	db 52, ELECTRODE
 	db 56, CHANSEY
 	db 54, WIGGLYTUFF
-	db 55, DITTO
+	db 55, OMASTAR
 	db 60, DITTO
 
 	db 0 ; water encounter rate

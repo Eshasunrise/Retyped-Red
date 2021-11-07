@@ -1,6 +1,6 @@
 	db DEX_FARFETCHD ; pokedex id
 
-	db  52,  90,  55,  95,  88
+	db  62,  90,  55,  95,  88
 	;   hp  atk  def  spd  spc
 
 	db GRASS, FLYING ; type

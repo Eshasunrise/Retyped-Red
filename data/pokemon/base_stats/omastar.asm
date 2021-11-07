@@ -1,9 +1,9 @@
 	db DEX_OMASTAR ; pokedex id
 
-	db  70,  60, 125,  55, 115
+	db  85,  70, 125,  55, 115
 	;   hp  atk  def  spd  spc
 
-	db ROCK, WATER ; type
+	db ROCK, ICE ; type
 	db 45 ; catch rate
 	db 199 ; base exp
 
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   \
 	     SEISMIC_TOSS, MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SKULL_BASH,   SLUDGE_BOMB,  REST,         SUBSTITUTE,   SURF
+	     SKULL_BASH,   SLUDGE_BOMB,  REST,         ROCK_SLIDE,   SUBSTITUTE,   \
+	     SURF
 	; end
 
 	db 0 ; padding

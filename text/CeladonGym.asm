@@ -88,19 +88,20 @@ _TM21NoRoomText::
 _CeladonGymBattleText2::
 	text "Hey!"
 
-	para "You are not"
-	line "allowed in here!"
+	para "It's me! How"
+	line "have you been?"
 	done
 
 _CeladonGymEndBattleText2::
-	text "You're"
-	line "too rough!"
+	text "Oof..."
+;	line "too rough!"
 	prompt
 
 _CeladonGymAfterBattleText2::
-	text "Bleaah!"
-	line "I hope ERIKA"
-	cont "wipes you out!"
+	text "I'm glad ERIKA let"
+	line "me train here,"
+	cont "though I'm still"
+	cont "a bit nervous."
 	done
 
 _CeladonGymBattleText3::
@@ -203,7 +204,7 @@ _CeladonGymBattleText8::
 
 	para "You better not"
 	line "underestimate"
-	cont "girl power!"
+	cont "us!"
 	done
 
 _CeladonGymEndBattleText8::

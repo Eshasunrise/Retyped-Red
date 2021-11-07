@@ -16,7 +16,8 @@
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     ICE_BEAM,     BLIZZARD,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SLUDGE_BOMB,  REST,         SUBSTITUTE,   SURF
+	     BIDE,         SLUDGE_BOMB,  REST,         ROCK_SLIDE,   SUBSTITUTE,   \
+	     SURF
 	; end
 
 	db 0 ; padding

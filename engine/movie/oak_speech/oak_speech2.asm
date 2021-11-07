@@ -1,11 +1,26 @@
 ChoosePlayerName:
 	call OakSpeechSlidePicRight
+;joenote - support female trainer sprite
+	ld de, DefaultNamesPlayerF
+	ld a, [wPlayerGenderByte]
+	bit 0, a
+	jr nz, .donefemale_names
+;;;;;;;;;;;;;;
 	ld de, DefaultNamesPlayer
+.donefemale_names
 	call DisplayIntroNameTextBox
 	ld a, [wCurrentMenuItem]
 	and a
 	jr z, .customName
+;joenote - support female trainer sprite
+	push af
+	ld hl, DefaultNamesPlayerListF
+	ld a, [wPlayerGenderByte]
+	bit 0, a
+	jr nz, .donefemale_names2
 	ld hl, DefaultNamesPlayerList
+.donefemale_names2
+	pop af
 	call GetDefaultName
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
@@ -20,8 +35,16 @@ ChoosePlayerName:
 	jr z, .customName
 	call ClearScreen
 	call Delay3
+;joenote - support fem trainer sprite, Eilenenote - Oh hey female sprite support look at that
+	ld de, RedPicFFront
+	ld b, BANK(RedPicFFront)
+	ld a, [wPlayerGenderByte]
+	bit 0, a
+	jr nz, .donefemale_front
+;;;;;;;;;;;;;;;;
 	ld de, RedPicFront
 	ld b, BANK(RedPicFront)
+.donefemale_front
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -187,6 +210,14 @@ DisplayIntroNameTextBox:
 .namestring
 	db "NAME@"
 
+;joenote - set female trainer names
+DefaultNamesPlayerF:
+	db "NEW NAME"
+	next "PINK"
+	next "GREEN"
+	next "ESHA"
+	db "@"	
+
 INCLUDE "data/player_names.asm"
 
 GetDefaultName:
@@ -214,6 +245,13 @@ GetDefaultName:
 	jp CopyData
 
 INCLUDE "data/player_names_list.asm"
+
+;joenote - set female trainer names
+DefaultNamesPlayerListF:
+	db "NEW NAME@"
+	db "PINK@"
+	db "GREEN@"
+	db "ESHA@"
 
 LinkMenuEmptyText:
 	text_end

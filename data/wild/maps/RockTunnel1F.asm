@@ -8,7 +8,7 @@ TunnelMonsB1:
 	db 18, ZUBAT
 	db 15, ZUBAT
 	db 17, MACHOP
-	db 13, ONIX
 	db 15, ONIX
+	db 18, GOLEM
 
 	db 0 ; water encounter rate

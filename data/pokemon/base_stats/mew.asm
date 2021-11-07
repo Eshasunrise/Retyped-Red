@@ -24,8 +24,7 @@
 	     SELFDESTRUCT, DRAIN_KISS,   FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     SLUDGE_BOMB,  DREAM_EATER,  CONVERSION,   REST,         THUNDER_WAVE, \
 	     SHADOW_BALL,  EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
-	     CUT,          FLY,          SURF,         STRENGTH,     FLASH,        \
-	     UNUSED
+	     CUT,          FLY,          SURF,         STRENGTH,     FLASH
 	; end
 
 	db %11111111 ; padding

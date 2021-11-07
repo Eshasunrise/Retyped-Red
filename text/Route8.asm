@@ -128,23 +128,22 @@ _Route8AfterBattleText8::
 	done
 
 _Route8BattleText9::
-	text "What's a cute,"
-	line "round and fluffy"
-	cont "#MON?"
+	text "Umm...you don't,"
+	line "recognize me,"
+	cont "do you?"
 	done
 
 _Route8EndBattleText9::
-	text "Stop!"
-
-	para "Don't be so mean"
-	line "to my CLEFAIRY!"
+	text "Oh no!"
+;	para "Don't be so mean"
+;	line "to my CLEFAIRY!"
 	prompt
 
 _Route8AfterBattleText9::
-	text "I heard that"
-	line "CLEFAIRY evolves"
-	cont "when it's exposed"
-	cont "to a MOON STONE."
+	text "I was a BUG"
+	line "CATCHER before."
+;	cont "when it's exposed"
+;	cont "to a MOON STONE."
 	done
 
 _Route8Text10::

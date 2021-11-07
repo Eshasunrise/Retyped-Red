@@ -191,6 +191,20 @@ ExplodeEffect:
 	ld [de], a
 	ret
 
+TriAttackEffect:
+   ld b, BURN_SIDE_EFFECT1
+   ld a, [hRandomSub] ; grab a random number
+   cp 85 ; 85 / 256 chance = 33%
+   jr c, .gotStatusEffect
+   inc b ; FREEZE_SIDE_EFFECT
+   cp 170 ; (170-85) / 256 chance = 33%
+   jr c, .gotStatusEffect
+   inc b ; PARALYZE_SIDE_EFFECT1 ; remaining 33%
+.gotStatusEffect
+   ld a, b
+   ld [wPlayerMoveEffect], a
+; fallthrough to FreezeBurnParalyzeEffect
+
 FreezeBurnParalyzeEffect:
 	xor a
 	ld [wAnimationType], a

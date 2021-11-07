@@ -20,6 +20,6 @@ IF DEF(_BLUE)
 ENDC
 	db 17, SPEAROW
 	db 11, DROWZEE
-	db 15, DROWZEE
+	db 10, MR_MIME
 
 	db 0 ; water encounter rate

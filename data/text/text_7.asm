@@ -198,3 +198,8 @@ _UsedCutText::
 	text " hacked"
 	line "away with CUT!"
 	prompt
+
+_AskIfGirlText::
+	text "Do you look"
+	line "like a boy?"
+	done

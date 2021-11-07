@@ -91,3 +91,4 @@
 	const LEECH_SEED_EFFECT          ; $54
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
+	const TRI_ATTACK_EFFECT          ; $57

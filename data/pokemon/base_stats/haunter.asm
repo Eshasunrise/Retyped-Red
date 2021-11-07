@@ -3,7 +3,7 @@
 	db  45,  50,  45,  95, 115
 	;   hp  atk  def  spd  spc
 
-	db GHOST, POISON ; type
+	db GHOST, DARK ; type
 	db 90 ; catch rate
 	db 126 ; base exp
 
@@ -14,10 +14,10 @@
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        FLAMETHROWER, MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      \
-	     PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, \
-	     SLUDGE_BOMB,  DREAM_EATER,  REST,         SHADOW_BALL,  EXPLOSION,    \
-	     SUBSTITUTE
+	tmhm MEGA_PUNCH,   TOXIC,        FAINT_ATTACK, ICE_BEAM,     MEGA_DRAIN,   \
+	     THUNDERBOLT,  THUNDER,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  \
+	     BIDE,         SELFDESTRUCT, SLUDGE_BOMB,  DREAM_EATER,  REST,         \
+	     SHADOW_BALL,  EXPLOSION,    SUBSTITUTE
 	; end
 
 	db 0 ; padding

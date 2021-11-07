@@ -909,7 +909,7 @@ ItemUseMedicine:
 	ld de, wBattleMonStats
 	ld bc, NUM_STATS * 2
 	call CopyData ; copy party stats to in-battle stat data
-	predef DoubleOrHalveSelectedStats
+;	predef DoubleOrHalveSelectedStats
 	jp .doneHealing
 .healHP
 	inc hl ; hl = address of current HP
@@ -1823,11 +1823,23 @@ CoinCaseNumCoinsText:
 	text_end
 
 ItemUseOldRod:
-	call FishingInit
 	jp c, ItemUseNotTime
+	ld a, [wPartyCount]
+	call FishingInit
+	and a
+	jp z, .emptyParty2
 	lb bc, 5, MAGIKARP
 	ld a, $1 ; set bite
 	jr RodResponse
+.emptyParty2
+	ld hl, .emptyPartyText2
+	xor a
+	ld [wActionResultOrTookBattleTurn], a ; item use failed
+	jp PrintText
+.emptyPartyText2
+	text "You need a"
+	line "#MON first!"
+	prompt
 
 ItemUseGoodRod:
 	call FishingInit
@@ -2080,6 +2092,8 @@ ItemUsePPRestore:
 ; are used to count how many PP Ups have been used on the move. So, Max Ethers
 ; and Max Elixirs will not be detected as having no effect on a move with full
 ; PP if the move has had any PP Ups used on it.
+;joenote - fixing this
+	and %00111111 ; lower 6 bit bits store current PP
 	cp b ; does current PP equal max PP?
 	ret z
 	jr .storeNewAmount

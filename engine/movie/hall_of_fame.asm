@@ -183,8 +183,26 @@ HoFMonInfoText:
 	next "TYPE2/@"
 
 HoFLoadPlayerPics:
+;;;;;;;;;;;
+;joenote - support female trainer sprite
+	ld de, RedPicFFront
+	ld a, BANK(RedPicFFront)
+
+	;preserve bank value in A
+	push de
+	ld d, a
+	ld a, [wPlayerGenderByte]
+	bit 0, a	;check if girl
+	;need to get the bank value back in A
+	ld a, d
+	pop de
+
+	jr nz, .donefemale_front
+;;;;;;;;;;;;
 	ld de, RedPicFront
 	ld a, BANK(RedPicFront)
+
+.donefemale_front ;added for femred
 	call UncompressSpriteFromDE
 	ld hl, sSpriteBuffer1
 	ld de, sSpriteBuffer0
@@ -192,8 +210,25 @@ HoFLoadPlayerPics:
 	call CopyData
 	ld de, vFrontPic
 	call InterlaceMergeSpriteBuffers
+
+;;;;;;;;;;;;;eilenenote - guess what? That's right girl time
+	ld de, RedPicFBack
+	ld a, BANK(RedPicFBack)
+	
+	;preserve bank value in A
+	push de
+	ld d, a
+	ld a, [wPlayerGenderByte]
+	bit 0, a	;check if girl
+	;need to get the bank value back in A
+	ld a, d
+	pop de
+
+	jr nz, .donefemale_back
+;;;;;;;;;;;;
 	ld de, RedPicBack
 	ld a, BANK(RedPicBack)
+.donefemale_back ; added for girl again
 	call UncompressSpriteFromDE
 	predef ScaleSpriteByTwo
 	ld de, vBackPic

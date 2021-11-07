@@ -1,0 +1,29 @@
+;Overworld female trainer sprite functions
+LoadRedSpriteToDE:
+	ld de, RedFSprite
+	ld a, [wUnusedD119]
+	bit 0, a	;check if girl
+	jr nz, .donefemale
+	ld de, RedSprite
+.donefemale
+	res 2, a
+	ld [wUnusedD119], a
+	ret
+	
+LoadSeelSpriteToDE:
+	ld de, SeelSprite
+	ld a, [wUnusedD119]
+	set 2, a	;regardless if boy or girl, need to set override bit to use the regular sprite bank
+	ld [wUnusedD119], a
+	ret
+
+LoadRedCyclingSpriteToDE:
+	ld de, RedFCyclingSprite
+	ld a, [wUnusedD119]
+	bit 0, a	;check if girl
+	jr nz, .donefemale
+	ld de, RedCyclingSprite
+.donefemale
+	res 2, a
+	ld [wUnusedD119], a
+	ret

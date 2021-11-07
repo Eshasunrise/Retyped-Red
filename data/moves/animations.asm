@@ -187,6 +187,26 @@ AttackAnimationPointers:
 	dw LeafBladeAnim
 	dw SacredSwordAnim
 	dw PlayRoughAnim
+	dw WingbeatAnim
+	dw BoomburstAnim
+	dw BelchAnim
+	dw StoneEdgeAnim
+	dw DrillRunAnim
+	dw WeirdSteamAnim
+	dw FreezeGlareAnim
+	dw ThunderKickAnim
+	dw FieryWrathAnim
+	dw FrenzyPlantAnim
+	dw BlastBurnAnim
+	dw HydroCannonAnim
+	dw AcidSprayAnim
+	dw WhirlpoolAnim
+	dw FeatherdanceAnim
+	dw SnarlAnim
+	dw MetalSoundAnim
+	dw RockPolishAnim
+	dw ChargeAnim
+	dw ShoreUpAnim
 	dw StruggleAnim
 	dw ShowPicAnim
 	dw EnemyFlashAnim
@@ -226,7 +246,7 @@ AttackAnimationPointers:
 	dw ThrowRockAnim
 	dw ThrowBaitAnim
 	dw ZigZagScreenAnim
-
+	
 
 ; each animation is a list of subanimations
 ; and/or special effects, terminated by -1
@@ -1435,3 +1455,130 @@ PlayRoughAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
+
+WingbeatAnim:
+	battle_anim WING_ATTACK, SUBANIM_04, 1, 6
+	battle_anim WING_ATTACK, SUBANIM_04, 1, 6
+	db -1 ; end
+
+BoomburstAnim:
+	battle_anim SUPERSONIC, SUBANIM_31, 0, 6
+	battle_anim EGG_BOMB, SUBANIM_42, 1, 4
+	db -1 ; end
+
+BelchAnim:
+	battle_anim FISSURE, SE_DARK_SCREEN_FLASH
+	battle_anim SMOG, SUBANIM_19, 1, 6
+	battle_anim NO_MOVE, SE_SHAKE_SCREEN
+	db -1 ; end
+
+StoneEdgeAnim:
+	battle_anim ROCK_THROW, SUBANIM_41, 1, 3
+	battle_anim RAZOR_WIND, SUBANIM_16, 0, 4
+	db -1 ; end
+
+DrillRunAnim:
+	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
+	battle_anim DRILL_PECK, SUBANIM_04, 1, 6
+	battle_anim NO_MOVE, SE_RESET_MON_POSITION
+	db -1 ; end
+
+WeirdSteamAnim:
+	battle_anim LEECH_SEED, SE_LIGHT_SCREEN_PALETTE
+	battle_anim SMOG, SUBANIM_19, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+FreezeGlareAnim:
+	battle_anim ICE_BEAM, SUBANIM_2E, 0, 3
+	battle_anim GLARE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+ThunderKickAnim:
+	battle_anim JUMP_KICK, SUBANIM_04, 1, 6
+	battle_anim THUNDERSHOCK, SUBANIM_29, 1, 2
+	db -1 ; end
+
+FieryWrathAnim:
+	battle_anim NO_MOVE, SE_DARK_SCREEN_PALETTE
+	battle_anim FLAMETHROWER, SUBANIM_1F, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_0C, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_0D, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+FrenzyPlantAnim:
+	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
+	battle_anim RAZOR_LEAF, SE_LEAVES_FALLING
+	battle_anim SWIFT, SUBANIM_44, 1, 1
+	battle_anim MEGA_PUNCH, SUBANIM_04, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+BlastBurnAnim:
+	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
+	battle_anim FIRE_BLAST, SUBANIM_1F, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_0D, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_0D, 1, 6
+	battle_anim MEGA_PUNCH, SUBANIM_04, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+HydroCannonAnim:
+	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
+	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
+	battle_anim HYDRO_PUMP, SUBANIM_1A, 0, 6
+	battle_anim MEGA_PUNCH, SUBANIM_04, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+AcidSprayAnim:
+	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
+	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+WhirlpoolAnim:
+	battle_anim GUST, SUBANIM_10, 1, 6
+	battle_anim WATER_GUN, SUBANIM_2C, 0, 6
+	db -1 ; end
+
+FeatherdanceAnim:
+	battle_anim KINESIS, SUBANIM_01, 0, 8
+	db -1 ; end
+
+SnarlAnim:
+	battle_anim GROWL, SUBANIM_12, 1, 6
+	db -1 ; end
+
+MetalSoundAnim:
+	battle_anim LEECH_SEED, SE_LIGHT_SCREEN_PALETTE
+	battle_anim GLARE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+RockPolishAnim:
+	battle_anim LEECH_SEED, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+ChargeAnim:
+	battle_anim GLARE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_SPIRAL_BALLS_INWARD
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+ShoreUpAnim:
+	battle_anim DEFENSE_CURL, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SLIDE_MON_DOWN
+	battle_anim NO_MOVE, SUBANIM_51, 0, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SHOW_MON_PIC
+	battle_anim RECOVER, SE_BLINK_MON
+	db -1 ; end
+	

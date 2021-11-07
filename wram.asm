@@ -1996,7 +1996,8 @@ wMonHGrowthRate::
 
 wMonHLearnset::
 ; bit field
-	flag_array NUM_TMS + NUM_HMS
+;	flag_array NUM_TMS + NUM_HMS
+	flag_array 50 + 5
 	ds 1
 wMonHeaderEnd::
 
@@ -2817,7 +2818,11 @@ wSeafoamIslandsB4FCurScript::
 wRoute18Gate1FCurScript::
 	ds 1
 
-	ds 78
+	ds 77
+
+wPlayerGenderByte::
+	ds 1
+	
 wGameProgressFlagsEnd::
 
 	ds 56

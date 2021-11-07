@@ -9,6 +9,6 @@ Route17Mons:
 	db 28, DODUO
 	db 29, RATICATE
 	db 25, FEAROW
-	db 27, FEAROW
+	db 27, EEVEE
 
 	db 0 ; water encounter rate
